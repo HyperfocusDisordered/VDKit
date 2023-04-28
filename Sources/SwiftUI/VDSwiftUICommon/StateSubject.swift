@@ -9,10 +9,10 @@ import SwiftUI
 import Combine
 import VDOptional
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 public typealias ValueStateSubject<Value> = StateSubject<PassthroughSubject<Value, Never>>
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 @propertyWrapper
 public struct StateSubject<S: Subject>: DynamicProperty, Publisher where S.Failure == Never {
 	public typealias Failure = Never
@@ -84,7 +84,7 @@ public struct StateSubject<S: Subject>: DynamicProperty, Publisher where S.Failu
 	}
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 extension StateSubject where Output: OptionalProtocol {
 	
 	public init(_ publisher: @escaping @autoclosure () -> S) {
@@ -92,10 +92,10 @@ extension StateSubject where Output: OptionalProtocol {
 	}
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 public typealias StateTimer = StatePublisher<Publishers.Autoconnect<Timer.TimerPublisher>, Date>
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 @propertyWrapper
 public struct StatePublisher<P: Publisher, Output>: DynamicProperty, Publisher where P.Failure == Never, P.Output == Output {
 	public typealias Failure = Never
@@ -147,7 +147,7 @@ public struct StatePublisher<P: Publisher, Output>: DynamicProperty, Publisher w
 	}
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 extension StatePublisher where P.Output: OptionalProtocol {
 	
 	public init(_ publisher: @escaping @autoclosure () -> P) {
@@ -155,7 +155,7 @@ extension StatePublisher where P.Output: OptionalProtocol {
 	}
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 extension StatePublisher where P == Publishers.Autoconnect<Timer.TimerPublisher> {
 	
 	public init(_ interval: TimeInterval, tolerance: TimeInterval? = nil, in mode: RunLoop.Mode = .default, options: RunLoop.SchedulerOptions? = nil) {
@@ -163,7 +163,7 @@ extension StatePublisher where P == Publishers.Autoconnect<Timer.TimerPublisher>
 	}
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 public final class PublisherObject<P: Publisher>: ObservableObject where P.Failure == Never {
 	public typealias ObjectWillChangePublisher = P
 	public let publisher: P
