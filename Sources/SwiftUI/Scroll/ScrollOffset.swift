@@ -55,7 +55,7 @@ public struct ScrollOffset<T>: DynamicProperty {
     }
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 extension ScrollOffset where T == ContentFrame {
 
     public init(updateOnScroll: Bool = false) {
@@ -63,7 +63,7 @@ extension ScrollOffset where T == ContentFrame {
     }
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 extension ScrollOffset where T == CGPoint {
     
     public init(_ unitPoint: UnitPoint = .zero, updateOnScroll: Bool = false) {
@@ -71,7 +71,7 @@ extension ScrollOffset where T == CGPoint {
     }
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 private final class OffsetDelegate: ObservableObject {
     weak var scroll: UIScrollView?
     

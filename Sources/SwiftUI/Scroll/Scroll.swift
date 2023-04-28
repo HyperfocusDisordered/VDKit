@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 import VDSwiftUICommon
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, OSX 11, tvOS 13.0, watchOS 6.0, *)
 public struct Scroll<Content: View>: UIViewRepresentable {
   public var axis: Axis.Set
   public var alignment: Alignment
